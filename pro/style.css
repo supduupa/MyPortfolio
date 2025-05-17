@@ -1,71 +1,65 @@
-
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
-body{
-    margin: 0;
-    padding: 0;
-    /* background-color: #f4f4f4; */
-    color: #333;
+/* body{
+    background-image: url(./Pasted\ image\ \(2\).png);
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+} */
+ body{
     overflow-x: hidden;
-}
-
+ }
 nav{
-    display: flex;
-    justify-content: space-between;
     background-color: #ff3;
-    position: fixed;
-    min-width: 100%;
-    min-height: 10vh;
-    z-index: 1000;
-    padding: 35px;
-    margin-top: -64px;
-    margin-left: -53px;
+    box-shadow: 10px 10px  rgba(0, 0, 0, 0.1);
 }
-ul{
+nav ul{
     display: flex;
-    gap: 68px;
-    padding-right: 14rem;
-}
-ul li{
+    justify-content: flex-end;
+    align-items: center;
     list-style: none;
+    height: 10vh;
+    padding: 3rem
+}
+/* nav ul li{
+    height: 50px;
+} */
+ul li:first-child{
+    margin-right: auto;
     
 }
-ul li a{
+ul a:first-child{
     text-decoration: none;
-    font-family: sans-serif;
-    font-size: 20px;
-   
+    color: rgba(0, 0, 0, 1.2);
 }
-ul a{
-    color: #FE7743;
-}
-a:hover{
+nav ul li .hide{
+    text-decoration: none;
+    align-items: center;
+    padding: 0 30px;
     color: black;
+    /* height: 100%; */
 }
-ul #btn{
-    padding: 10px;
-    border: none;
-    background-color: #181C14;
-    color: red;
-    cursor: pointer;
-    border-radius: 8px
+nav .hide:hover{
+    background-color: #f0f0f0;
 }
-ul #btn:hover{
-    background-color: #fff;
-}
-ul button{
-    margin-left: 12rem;
-    margin-right: -8rem;
-}
-h1{
-    padding-left: 4rem;
-    text-transform: capitalize;
-    cursor: pointer;
-    color: #0118D8;
+.sidebar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    backdrop-filter: blur(10px);
+    background-color: #ff3;
+    box-shadow: -3px 0px 10px rgba(225,225,255,1.0);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    line-height: 56px;
 }
 section {
     padding: 2rem;
@@ -73,63 +67,26 @@ section {
     margin: 1rem;
     border-radius: 8px;
   }
-#about{
-    text-align: center;
-    background-color: gray;
-    height: 77vh;
+  .container{
+    display: flex;
+    justify-content: space-evenly; 
+  }
+  .red{
+        text-align: center;
     position: relative;
-    top: 19px;
-    z-index: 0;
-}
-#about img{
-    float: left;
-    position: relative;
-    /* left: 15rem; */
-    box-shadow: 4px 3px 8px 5px #fff;
-    margin-left: 16rem;
-    margin-top: 4rem;
-}
-#about p{
+    top: 111px;
+  }
+  .container img{
+    box-shadow: 2px 3px 4px 6px;
+  }
+  .red p{
     text-transform: capitalize;
-    padding-right: 23rem;
-    padding-top: 3rem;
     font-family: serif;
-}
-#about h2{
-    padding-top: 2rem;
-    padding-right: 25rem;
-    font-family: sans-serif;
-}
-/* .container{
-    position: relative;
-    top: 4rem;
-} */
-.red{
-    padding-left: 35rem;
-    position: relative;
-    top: 5rem;
-}
-#map{
-    float: right;
-}
-.contact{
-    /* position: relative;
-    left: 14rem;
-    top: 9rem;
-    cursor: pointer; */
-    display: block;
-    text-align: center;
-    margin-top: 13rem;
-    cursor: pointer;
-    font-family: sans-serif;
-    line-height: 29px;
-}
-#contact{
-    background-color: #DBDBDB;
-    margin-top: 3rem;
-    min-height: 80vh;
-}
-.card{
+  }
+  #about{
+     background-color: gray;
+  }
+  .card{
     margin-top: 2rem;
 }
 #projects{
@@ -137,6 +94,7 @@ section {
     justify-content: space-around;
     font-family: serif;
     text-transform: capitalize;
+    color: black;
 }
 .projects{
     /* background-color: #DBDBDB; */
@@ -147,6 +105,26 @@ section {
 h4{
     text-align: center;
     font-family: sans-serif;
+}
+.contact{
+    text-align: center;
+    position: relative;
+    top: 12rem;
+    font-size: 21px;
+    font-family: sans-serif;
+}
+
+#contact{
+    display: flex;
+    flex-direction: row;
+    background-color: #DBDBDB;
+    margin-top: 3rem;
+    min-height: 80vh;
+    justify-content: space-around;
+}
+.mode button{
+    border: none;
+    background-color: none;
 }
 footer{
     background-color: #ff3;
@@ -182,15 +160,36 @@ footer p{
 .tik a:hover{
     color: #181C14;
 }
+@media  (max-width:800px){
+    .container{
+    display: flex;
+    flex-direction: column;
+  }
+  .container img{
+    height: 40vh;
+    width: auto;
+  }
+  #about{
+    min-height: 100vh;
+  }
+  #contact{
+    display: flex;
+    flex-direction: column;
+  }
+  .contact{
+    font-size: 16px;
+       padding-top: 36px;
+        position: relative;
+        top: -28px;
+}
 
-
-
-
-
-
-
-
-
-
-
-
+  #map{
+    width: auto;
+    height: 300px;
+  }
+    .hid{
+        display: none;
+    }
+   
+  
+}
