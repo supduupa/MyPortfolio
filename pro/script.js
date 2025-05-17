@@ -1,12 +1,25 @@
-supa = document.getElementById("btn");
+       function showsidebar(){
+            const show = document.querySelector(".sidebar");
+            show.style.display = "flex"
+        }
+        function hidesidebar(){
+             const hide = document.querySelector(".sidebar");
+            hide.style.display = "none"
+        }
+let isDarkMode = false;
+const btn = document.getElementById("btn");
 
-function myfunction(){
+function toggleDarkMode() {
+    isDarkMode = !isDarkMode;
+    const body = document.getElementById("body");
     
-    // document.body.style.backgroundColor = "black";
-    // supa.innerText = "Light mode";
-    document.getElementById("body").style.backgroundColor = "black";
-}
-
-function myfunction1(){
-    document.getElementById("body").style.backgroundColor = "white";
+    if (isDarkMode) {
+        body.style.backgroundColor = "black";
+        body.style.color = "white";
+        // btn.innerText = "Dark mode";
+    } else {
+        body.style.backgroundColor = "white";
+        body.style.color = "#333";
+        // btn.innerText = "Light mode";
+    }
 }
